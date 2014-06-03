@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">StarterTodoApp</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_edit_item">EditItemActivity</string>
+    <string name="add_button_label">Add</string>
+    <string name="hint_text">Enter new item</string>
+    <string name="edit_text">Edit text below</string>
+    <string name="edit_button_save">Save</string>
+
+</resources>

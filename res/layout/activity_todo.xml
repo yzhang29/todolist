@@ -1,0 +1,35 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${packageName}.${activityClass}" >
+
+    <EditText
+        android:id="@+id/etNewItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnAddItem"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="14dp"
+        android:ems="10"
+        android:hint="@string/hint_text" />
+
+    <Button
+        android:id="@+id/btnAddItem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_toRightOf="@+id/etNewItem"
+        android:onClick="addTodoItem"
+        android:text="@string/add_button_label" />
+
+    <ListView
+        android:id="@+id/lvItems"
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        android:layout_above="@+id/btnAddItem"
+        android:layout_alignLeft="@+id/etNewItem" >
+    </ListView>
+
+</RelativeLayout>
