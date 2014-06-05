@@ -34,7 +34,7 @@
         android:layout_alignLeft="@+id/editItemText"
         android:layout_below="@+id/editItemText"
         android:layout_marginTop="32dp"
-        android:onClick="editTodoItem"
+        android:onClick="onSubmit"
         android:text="@string/edit_button_save" />
 
 </RelativeLayout>

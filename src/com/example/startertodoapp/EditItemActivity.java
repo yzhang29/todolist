@@ -20,9 +20,9 @@ public class EditItemActivity extends Activity {
 		etName.setText(getIntent().getStringExtra("oldText"));
 		index = getIntent().getIntExtra("index", 0);
 	}
-	public void editTodoItem(View v) {
+	public void onSubmit(View v) {
 	  // Prepare data intent 
-	  Intent data = new Intent();
+	  Intent data = new Intent(EditItemActivity.this, TodoActivity.class);
 	  // Pass relevant data back as a result
 	  data.putExtra("edited", etName.getText().toString());
 	  data.putExtra("index", index);

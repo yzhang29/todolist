@@ -66,7 +66,7 @@ public class TodoActivity extends Activity {
     			TextView txt = (TextView) parent.getChildAt(position);
     			i.putExtra("oldText", txt.getText().toString());
     			i.putExtra("index", position);
-    			startActivity(i);
+    			startActivityForResult(i, REQUEST_CODE);
     		}
     	});
     }
@@ -96,24 +96,14 @@ public class TodoActivity extends Activity {
     
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == 1) {
-            if (resultCode == RESULT_OK) {
+    	  if (resultCode == RESULT_OK && requestCode == REQUEST_CODE) {
                 // code for result
-                edited = getIntent().getExtras().getString("edited");
-                editedIndex = getIntent().getExtras().getInt("index");
-                backFromChild = true;
-            }
+                edited = data.getExtras().getString("edited");
+                editedIndex = data.getExtras().getInt("index");
+                items.set(editedIndex, edited);
+                itemsAdapter.notifyDataSetChanged();
+                saveItems();   
         }
-    }
-    @Override
-    public void onResume(){
-        super.onResume();
-        if (backFromChild){
-             backFromChild = false;
-             //do something with aString here
-             items.set(editedIndex, edited);
-             saveItems();        
-             }
     }
 
 }
